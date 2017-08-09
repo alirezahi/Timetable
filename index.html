@@ -8,16 +8,15 @@
     <title>Timetable</title>
 </head>
 <body>
-    <div>
-        <div class="timetable">
-
+        <div style="text-align:center;">انتخاب واحد ساز</div>
+        <div class="timetable-container">
+            <div class="timetable"></div>
         </div>
-    </div>
-    <script src="dist/scripts/timetable.min.js"></script>
+    <script src="dist/scripts/timetable.js"></script>
     <script>
       var timetable = new Timetable();
 
-      timetable.setScope(7,20)
+      timetable.setScope(7,20);
 
       timetable.addLocations(['شنبه','یکشنبه','دوشنبه','سه شنبه','چهارشنبه','پنجشنبه','جمعه']);
 

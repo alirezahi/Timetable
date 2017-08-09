@@ -103,9 +103,62 @@ Timetable.Renderer = function(tt) {
 		}
 	}
 
+	function changeToPersianNumber(hour){
+		switch(hour){
+			case 0:
+				return '۰';
+			case 1:
+				return '۱';
+			case 2:
+				return '۲';
+			case 3:
+				return '۳';
+			case 4:
+				return '۴';
+			case 5:
+				return '۵';
+			case 6:
+				return '۶';
+			case 7:
+				return '۷';
+			case 8:
+				return '۸';
+			case 9:
+				return '۹';
+			case 10:
+				return '۱۰';
+			case 11:
+				return '۱۱';
+			case 12:
+				return '۱۲';
+			case 13:
+				return '۱۳';
+			case 14:
+				return '۱۴';
+			case 15:
+				return '۱۵';
+			case 16:
+				return '۱۶';
+			case 17:
+				return '۱۷';
+			case 18:
+				return '۱۸';
+			case 19:
+				return '۱۹';
+			case 20:
+				return '۲۰';
+			case 21:
+				return '۲۱';
+			case 22:
+				return '۲۲';
+			case 23:
+				return '۲۳';
+		}
+
+	}
 	function prettyFormatHour(hour) {
-		var prefix = hour < 10 ? '0' : '';
-		return prefix + hour + ':00';
+		var prefix = hour < 10 ? '۰' : '';
+		return prefix + changeToPersianNumber(hour) + ':۰۰';
 	}
 
 	Timetable.Renderer.prototype = {
