@@ -4,34 +4,148 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="dist/styles/bootstrap.min.css"> -->
     <link rel="stylesheet" href="dist/styles/timetablejs.css">
+    <script src="dist/scripts/list.min.js"></script>
+    <script src="dist/scripts/script.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <title>Timetable</title>
 </head>
 <body>
-        <div style="text-align:center;">انتخاب واحد ساز</div>
+        <div style="text-align:center;padding:10px;">
+            <h1 style="border-radius:4px;;box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);text-align:center;background-color:white;display:inline-block;margin: 0 auto;padding:10px;">انتخاب واحد ساز</h1>
+        </div>
         <div class="timetable-container">
             <div class="timetable"></div>
         </div>
+        <div id="users">
+                <!-- <button class="sort" data-sort="name">
+                مرتب کردن
+                </button> -->
+              <input class="search" type="text" placeholder="جستجو" />
+              
+            
+              <!-- <ul class="list"> -->
+                <!-- <li>
+                  <h3 class="name">Jonny Stromberg</h3>
+                  <p class="born">1986</p>
+                </li>
+                <li>
+                    <h3 class="name">Alireza hi</h3>
+                    <p class="born">1997</p>
+                </li>
+                <li>
+                    <h3 class="name">Hello world</h3>
+                    <p class="born">1946</p>
+                </li>
+              </ul> -->
+              <div class="container-table">
+              <ul class="table-responsive">          
+                    <table class="table">
+                      <thead>
+                        <tr>
+                            <th class="add-lesson">اضافه کردن</td>
+                            <th class="name-lesson">نام درس</td>
+                            <th class="code-lesson">کد درس</td>
+                            <th class="group-lesson">گروه</td>
+                            <th class="teacher">استاد</td>
+                            <th class="time1">زمان</td>
+                            <th class="time2">زمان</td>
+                            <th class="ta">تدریسیار</td>
+                            <th class="group-ta">گروه تدریسیار</td>
+                            <th class="time-ta">زمان</td>
+                        </tr>
+                      </thead>
+                      <tbody class="list">
+                            <tr>
+                                    <td class="add-lesson"><button class="btn btn-success" onclick="add_course(this);">+</button></td><td class="name-lesson">معادلات ديفرانسيل</td><td class="code-lesson">1011253</td><td class="group-lesson">13</td><td class="teacher">واعظ پور</td><td class="time1">شنبه 12:15-10:45 </td><td class="time2">دوشنبه 12:15-10:45 </td><td class="ta"></td><td class="group-ta"></td><td class="time-ta"></td>
+                                    </tr>
+                                    <tr>
+                                    <td class="add-lesson"><button class="btn btn-success" onclick="add_course(this);">+</button></td><td class="name-lesson">آمار و احتمالات مهندسي</td><td class="code-lesson">1011303</td><td class="group-lesson">1</td><td class="teacher">رضاخواه ورنوسفادراني</td><td class="time1">يکشنبه 16:30-15 </td><td class="time2">سه شنبه 16:30-15 </td><td class="ta"></td><td class="group-ta"></td><td class="time-ta"></td>
+                                    </tr>
+                                    <tr>
+                                    <td class="add-lesson"><button class="btn btn-success" onclick="add_course(this);">+</button></td><td class="name-lesson">آمار و احتمالات مهندسي</td><td class="code-lesson">1011303</td><td class="group-lesson">2</td><td class="teacher">نقشينه ارجمند</td><td class="time1">يکشنبه 16:30-15 </td><td class="time2">سه شنبه 16:30-15 </td><td class="ta"></td><td class="group-ta"></td><td class="time-ta"></td>
+                                    </tr>
+                                    <tr>
+                                    <td class="add-lesson"><button class="btn btn-success" onclick="add_course(this);">+</button></td><td class="name-lesson">آمار و احتمالات مهندسي</td><td class="code-lesson">1011312</td><td class="group-lesson">1</td><td class="teacher">محمدپور</td><td class="time1">شنبه 17-15 </td><td class="time2"></td><td class="ta"></td><td class="group-ta"></td><td class="time-ta"></td>
+                                    </tr>
+                                    <tr>
+                                    <td class="add-lesson"><button class="btn btn-success" onclick="add_course(this);">+</button></td><td class="name-lesson">برنامه‌نويسي کامپيوتر</td><td class="code-lesson">1011353</td><td class="group-lesson">1</td><td class="teacher">ميرزاخواه</td><td class="time1">شنبه 10:45-9:15 </td><td class="time2">دوشنبه 10:45-9:15 </td><td class="ta">يزدانيان</td><td class="group-ta">1</td><td class="time-ta">چهارشنبه 10:45-9:15 </td>
+                                    </tr>
+                                    <tr>
+                                    <td class="add-lesson"><button class="btn btn-success" onclick="add_course(this);">+</button></td><td class="name-lesson">برنامه‌نويسي کامپيوتر</td><td class="code-lesson">1011353</td><td class="group-lesson">1</td><td class="teacher">ميرزاخواه</td><td class="time1">شنبه 10:45-9:15 </td><td class="time2">دوشنبه 10:45-9:15 </td><td class="ta">ياراحمدي</td><td class="group-ta">2</td><td class="time-ta">چهارشنبه 12:15-10:45 </td>
+                                    </tr>
+                                    <tr>
+                                    <td class="add-lesson"><button class="btn btn-success" onclick="add_course(this);">+</button></td><td class="name-lesson">برنامه‌نويسي کامپيوتر</td><td class="code-lesson">1011353</td><td class="group-lesson">2</td><td class="teacher">ميرزاخواه</td><td class="time1">شنبه 12:15-10:45 </td><td class="time2">دوشنبه 12:15-10:45 </td><td class="ta">يزدانيان</td><td class="group-ta">1</td><td class="time-ta">چهارشنبه 10:45-9:15 </td>
+                                    </tr>
+                                    <tr>
+                                    <td class="add-lesson"><button class="btn btn-success" onclick="add_course(this);">+</button></td><td class="name-lesson">برنامه‌نويسي کامپيوتر</td><td class="code-lesson">1011353</td><td class="group-lesson">2</td><td class="teacher">ميرزاخواه</td><td class="time1">شنبه 12:15-10:45 </td><td class="time2">دوشنبه 12:15-10:45 </td><td class="ta">ياراحمدي</td><td class="group-ta">2</td><td class="time-ta">چهارشنبه 12:15-10:45 </td>
+                                    </tr>
+                                    <tr>
+                                    <td class="add-lesson"><button class="btn btn-success" onclick="add_course(this);">+</button></td><td class="name-lesson">برنامه‌نويسي کامپيوتر</td><td class="code-lesson">1011353</td><td class="group-lesson">3</td><td class="teacher">شيرعلي شهرضا</td><td class="time1">شنبه 12:15-10:45 </td><td class="time2">دوشنبه 12:15-10:45 </td><td class="ta">تشكري</td><td class="group-ta">3</td><td class="time-ta">چهارشنبه 10:45-9:15 </td>
+                                    </tr>
+                                    <tr>
+                                    <td class="add-lesson"><button class="btn btn-success" onclick="add_course(this);">+</button></td><td class="name-lesson">برنامه‌نويسي کامپيوتر</td><td class="code-lesson">1011353</td><td class="group-lesson">4</td><td class="teacher">هوشمند خليق</td><td class="time1">شنبه 10:45-9:15 </td><td class="time2">دوشنبه 10:45-9:15 </td><td class="ta">معين فر</td><td class="group-ta">4</td><td class="time-ta">چهارشنبه 10:45-9:15 </td>
+                                    </tr>
+                      </tbody>
+                    </table>
+                </ul>
+            </div>
+        </div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary btn-modal" data-toggle="modal" data-target="#exampleModal" style="display:none;">
+        </button>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel" dir=rtl>پیغام</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              این درس قبلا اضافه شده خب !
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">ببند</button>
+              <button type="button" class="btn btn-primary">حله</button>
+            </div>
+          </div>
+        </div>
+      </div>
+              
     <script src="dist/scripts/timetable.js"></script>
     <script>
+        var options = {
+  valueNames: ['add-lesson', 'name-lesson', 'code-lesson','group-lesson','teacher','time1','time2','ta','group-ta','time-ta' ]
+};
+
+var userList = new List('users', options);
       var timetable = new Timetable();
 
       timetable.setScope(7,20);
 
       timetable.addLocations(['شنبه','یکشنبه','دوشنبه','سه شنبه','چهارشنبه','پنجشنبه','جمعه']);
 
-      timetable.addEvent('Sightseeing', 'شنبه', new Date(2015,7,17,9,00), new Date(2015,7,17,11,30), { url: '#' });
-      timetable.addEvent('Zumba', 'شنبه', new Date(2015,7,17,12), new Date(2015,7,17,13), { url: '#' });
-      timetable.addEvent('Zumbu', 'شنبه', new Date(2015,7,17,13,30), new Date(2015,7,17,15), { url: '#' });
-      timetable.addEvent('Lasergaming', 'شنبه', new Date(2015,7,17,17,45), new Date(2015,7,17,19,30), { class: 'vip-only', data: { maxPlayers: 14, gameType: 'Capture the flag' } });
-      timetable.addEvent('All-you-can-eat grill', 'شنبه', new Date(2015,7,17,21), new Date(2015,7,18,1,30), { url: '#' });
-      timetable.addEvent('Hackathon', 'شنبه', new Date(2015,7,17,11,30), new Date(2015,7,17,20)); // options attribute is not used for this event
-      timetable.addEvent('Tokyo Hackathon شنبه', 'شنبه', new Date(2015,7,17,12,30), new Date(2015,7,17,16,15)); // options attribute is not used for this event
-      timetable.addEvent('Lunch', 'شنبه', new Date(2015,7,17,9,30), new Date(2015,7,17,11,45), { url: '#' });
-      timetable.addEvent('Cocktails', 'شنبه', new Date(2015,7,18,00,00), new Date(2015,7,18,02,00), { class: 'vip-only' });
+    //   timetable.addEvent('سلام', 'یکشنبه', new Date(2015,7,17,12), new Date(2015,7,17,13), 1, { url: '#' });
+    //   timetable.addEvent('خدافظ', 'دوشنبه', new Date(2015,7,17,13,30), new Date(2015,7,17,15), 1, { url: '#' });
+    //   timetable.addEvent(' دوست عزیز من که خیلی خیلی عصر بخیر', 'سه شنبه', new Date(2015,7,17,17,45), new Date(2015,7,17,19,30), 1, { class: 'vip-only', data: { maxPlayers: 14, gameType: 'Capture the flag' } });
+    //   timetable.addEvent('ظهر بخیر', 'شنبه', new Date(2015,7,17,21), new Date(2015,7,18,1,30), 1, { url: '#' });
+    //   timetable.addEvent('شب بخیر', 'شنبه', new Date(2015,7,17,11,30), new Date(2015,7,17,20) ,1); // options attribute is not used for this event
+    //   timetable.addEvent('وای وای', 'شنبه', new Date(2015,7,17,12,30), new Date(2015,7,17,16,15) , 1); // options attribute is not used for this event
+    //   timetable.addEvent('چرا', 'شنبه', new Date(2015,7,17,9,30), new Date(2015,7,17,11,45), 1, { url: '#' });
+    //   timetable.addEvent('زیرا', 'شنبه', new Date(2015,7,18,00,00), new Date(2015,7,18,02,00), 1, { class: 'vip-only' });
 
       var renderer = new Timetable.Renderer(timetable);
       renderer.draw('.timetable');
     </script>
+
 </body>
 </html>

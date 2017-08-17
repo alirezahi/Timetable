@@ -75,7 +75,7 @@ Timetable.Renderer = function(tt) {
 
 			return this;
 		},
-		addEvent: function(name, location, start, end, options) {
+		addEvent: function(name, location, start, end, id, options) {
 			if (!locationExistsIn(location, this.locations)) {
 				throw new Error('Unknown location');
 			}
@@ -90,6 +90,7 @@ Timetable.Renderer = function(tt) {
 				location: location,
 				startDate: start,
 				endDate: end,
+				id: id,
 				options: optionsHasValidType ? options : undefined
 			});
 
